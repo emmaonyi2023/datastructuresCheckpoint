@@ -12,7 +12,7 @@ BEGIN
    const arr2 := [2, 4, 1, 9, 3];
    //concatinate the two arrays
    const tempArr = arr1.concat(arr2);
-   sort the resulting array...in ascending order
+   //sort the resulting array...in ascending order
    tempArr = tempArr.sort();
 
    let i = 0;
