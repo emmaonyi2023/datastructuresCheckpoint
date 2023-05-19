@@ -62,8 +62,8 @@ ALGORITHM CAL_DOT_PRODUCT
 
 VAR
    //declare variables
-   vector1, vector2, dotProduct: ARRAY_OF type[n];
-   i, j, n, dotProduct := INTEGER;
+   vector1, vector2, dotProduct: ARRAY_OF type[2];
+   i, j, dotProduct := INTEGER;
    
 BEGIN
  
@@ -79,6 +79,6 @@ BEGIN
   // return the dotProduct
   return dotProduct;
 
-  WRITE("The dotProduct is: ", dotProduct([3,1,], [9,3]));
+  WRITE("The dotProduct is: ", dotProduct([3,1], [9,3]));
       
   END
