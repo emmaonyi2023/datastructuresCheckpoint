@@ -1,3 +1,7 @@
+//PROBLEM ONE
+//=============
+
+
    ALGORITHM SUM_DISTINCT_ELEMENTS
 
 VAR
@@ -45,5 +49,36 @@ BEGIN
   return sum;
 
   WRITE("The sum of the distinct numbers is: ", sumOfDistinct([3,1,7,9], [2,4,1,9,3]));
+      
+  END
+
+
+
+
+//PROBLEM   TWO
+//=============
+
+ALGORITHM CAL_DOT_PRODUCT
+
+VAR
+   //declare variables
+   vector1, vector2, dotProduct: ARRAY_OF type[n];
+   i, j, n, dotProduct := INTEGER;
+   
+BEGIN
+ 
+  FUNCTION dotProduct(vector1, vector2)
+  // Function to calculate the dot product of two vectors
+  
+  dotProduct = 0;
+
+  FOR i FROM 0 TO vector1.length-1 STEP  i++ DO
+    dotProduct += vector1[i] * vector2[i];
+  END_FOR
+
+  // return the dotProduct
+  return dotProduct;
+
+  WRITE("The dotProduct is: ", dotProduct([3,1,], [9,3]));
       
   END
