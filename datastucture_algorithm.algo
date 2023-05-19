@@ -1,103 +1,49 @@
-ALGORITHM SUM_DIST_ELEMENT_OF_ARRAY
+   ALGORITHM SUM_DISTINCT_ELEMENTS
 
 VAR
    //declare variables
-   arr1, arr2: ARRAY_OF type[n];
-   sumDistNumber,sumNumber1,sumNumber2,sumNumber3,sumNumber4 := INTEGER := 0;
-   sumNumber5,sumNumber6,sumNumber7,sumNumber8,sumNumber9,sumNumber := INTEGER := 0;
-
+   mergedArr, distinctArr, arr1, arr2: ARRAY_OF type[n];
+   i, j, val, sum := INTEGER;
+   
 BEGIN
-    //initialize variables
-   const arr1 := [3, 1, 7, 9];
-   const arr2 := [2, 4, 1, 9, 3];
-   //concatinate the two arrays
-   const tempArr = arr1.concat(arr2);
-   //sort the resulting array...in ascending order
-   tempArr = tempArr.sort();
 
-   let i = 0;
-   const newArr = [];
-    //testing for each respective number case against the Numbers in the sorted array
-   for (i = 0; i < tempArr.length; i++) {
-      switch((tempArr[i]) {
-         case 1:
-            sumNumber1++;
-            break;
-         case 2:
-            sumNumber2++;
-            break;
-         case 3:
-            sumNumber3++;
-            break;
-         case 4:
-            sumNumber4++;
-            break;
-         case 5:
-            sumNumber5++;
-            break;
-         case 6:
-            sumNumber6++;
-            break;
-         case 7:
-            sumNumber7++;
-            break;
-         case 8:
-            sumNumber8++;
-            break;
-         case 9:
-            sumNumber9++;
-            break;
-         case 0:
-            sumNumber0++;
-            break;
-      }
-   }
-   //check to see if integers appear more than once.
-   IF (sumNumber1 === 1) THEN
-      newArr.push(1);
-   }
-   END_IF
-   IF (sumNumber2 === 1) THEN
-      newArr.push(2);
-   }
-   END_IF
-   IF (sumNumber3 === 1) THEN
-      newArr.push(3);
-   }
-   END_IF
-   IF (sumNumber4 === 1) THEN
-      newArr.push(4);
-   }
-   END_IF
-   IF (sumNumber5 === 1) THEN
-      newArr.push(5);
-   }
-   END_IF
-   IF (sumNumber6 === 1) THEN
-      newArr.push(6);
-   }
-   END_IF
-   IF (sumNumber7 === 1) THEN
-      newArr.push(7);
-   }
-   END_IF
-   IF (sumNumber8 === 1) THEN
-      newArr.push(8);
-   }
-   END_IF
-   IF (sumNumber9 === 1) THEN
-      newArr.push(9);
-   }
-   END_IF
-   IF (sumNumber0 === 1) THEN
-      newArr.push(0);
-   }
-   END_IF
-   //sum the distinct integers in the resulting array newArr
-   FOR i FROM 0 TO (newArr.length) STEP i++ DO
-      sumDistNumber = sumDistNumber + newArr[i];
-   }
-     END_FOR
-   //print out answer
-   WRITE("The sum of the distinct numbers is: ", sumDistNumber);
-   END
+   FUNCTION sumOfDistinct(arr1, arr2) {
+ 
+  // merge the given arrays
+  num = arr1.length + arr2.length;
+  mergedArr = [];
+  j = 0;
+  FOR i FROM 0 TO num-1 STEP i++)
+    IF (i > arr1.length-1) THEN
+      mergedArr.push(arr2[j]);
+      j++;
+    ELSE 
+      mergedArr.push(arr1[i]);
+    END_IF
+  END_FOR
+  
+  // find the distinct values
+  distinctArr = [];
+  FOR i FROM 0 TO mergedArr.length-1 STEP i++ DO
+    val = 0;
+    FOR j FROM 0 TO mergedArr.length-1 STEP j++ DO
+      IF (mergedArr[i] == mergedArr[j]) THEN
+        val++;
+      END_IF
+    IF (val === 1) THEN
+      distinctArr.push(mergedArr[i]);
+    END_IF
+  END_FOR
+  
+  // sum up the distinct values
+  sum = 0;
+  FOR i FROM 0 TO distinctArr.length-1 STEP i++ DO
+    sum += distinctArr[i];
+  END_FOR
+  
+  // return the sum
+  return sum;
+
+  WRITE("The sum of the distinct numbers is: ", sumOfDistinct([3,1,7,9], [2,4,1,9,3]));
+      
+  END
